@@ -1,0 +1,21 @@
+<h1> <button onclick="ChooseRole('teacher')"> Учитель </button> </h1>
+ <button onclick="ChooseRole('student')"> Ученик </button> 
+    <h2>Регистрация</h2>
+    <form method="post">
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+	<h1>{{res}}</h1>
+    </form>
+<script>
+function ChooseRole(role){
+	// var http = new XMLHttpRequest();
+	var url = location.protocol + '//' + location.host + location.pathname;
+	var params = 'role='+ role;
+	// http.open('GET', url+"?"+params, true);
+	// http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	
+	// http.send(null);
+	window.open(url+"?"+params, "_self")
+}
+<h3>Форма не валидна</h3>
+</script>
